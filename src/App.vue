@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- 路由容器的坑 -->
     111
     <router-view/>
   </div>

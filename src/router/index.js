@@ -7,8 +7,9 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'loginPage', // 命名路由
-      component: Login // 指定要显示的组件
-    }
+      redirect: './login'// 如果用户访问的 / 根路径,则重定向到/login页面
+
+    },
+    { path: './login', component: Login } // 登录页面的路由规则
   ]
 })
