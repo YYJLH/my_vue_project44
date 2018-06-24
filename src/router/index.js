@@ -16,7 +16,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   // 如果访问的是登录页直接放行
   if (to.path === '/login') return next()
-  // 获取token
+  // 获取token 字符串
   const tokenStr = sessionStorage.getItem('token')
   console.log(tokenStr)
   // 如果token存在直接放行
