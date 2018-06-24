@@ -22,6 +22,6 @@ router.beforeEach((to, from, next) => {
   // 如果token存在直接放行
   if (tokenStr) return next()
   // 如果不存在强制跳转到登录页面
-  return next('/login')
+  next('/login')
 })
 export default router
