@@ -62,15 +62,17 @@ export default {
       this.$refs.loginFormRef.validate(async valid => {
         // 验证失败，立即return
         if (!valid) return
+        // 发起登录的请求
         const { data: res } = await this.$http.post('login', this.loginForm)
         // 登录失败
         if (res.meta.status !== 200) return this.$message.error('登录失败！')
         // 登录成功
         this.$message.success('登录成功')
-        console.log(res)
-        // 把登录成功后的令牌保存到sessionStorage,供后续借口使用
+        // console.log(res)
+        // 把登录成功后的令牌保存到sessionStorage,供后续接口使用
         window.sessionStorage.setItem('token', res.data.token)
         // 使用JS API实现登录跳转 this.$router
+        this.$router.push('/home')
       })
     }
   }
